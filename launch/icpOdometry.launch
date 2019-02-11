@@ -1,0 +1,6 @@
+<launch>
+	<node name = "icpodometry" type = "icpOdometry" pkg = "icpOdometry" output = "screen">
+	<param name = "inputQueueSize" value="1" />
+	<remap from = "cloud_in" to = "/kitti/velo/pointcloud"/>
+	</node>
+</launch>
