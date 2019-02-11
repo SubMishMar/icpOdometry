@@ -1,6 +1,9 @@
 <launch>
 	<node name = "icpodometry" type = "icpOdometry" pkg = "icpOdometry" output = "screen">
-	<param name = "inputQueueSize" value="1" />
+	<param name = "inputQueueSize" value = "1" />
+	<param name = "minReadingPointCount" value = "1000"/>
+	<param name="icpConfig" value="$(find icpOdometry)/launch/icp_dynamic_outdoor.yaml" />
+	<param name="inputFiltersConfig" value="$(find icpOdometry)/launch/input_filters_outdoor.yaml" />
 	<remap from = "cloud_in" to = "/kitti/velo/pointcloud"/>
 	</node>
 </launch>
